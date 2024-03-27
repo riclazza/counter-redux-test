@@ -2,11 +2,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { decrement, increment, reset } from './store/counter.actions';
 import { useSelector } from 'react-redux';
-import { RootState } from '../..';
+import { selectCounter } from './store/counter.selectors';
 
 export const CounterPage: React.FC = () => {
   const dispatch = useDispatch();
-  const counter = useSelector((state: RootState) => state.counter);
+  const counter = useSelector(selectCounter);
 
   return (
     <div>
